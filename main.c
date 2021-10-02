@@ -8,15 +8,16 @@
 
 int main()
 {
-    char command[100] = "";
-    char violentcmd[125] = "";
     puts("Violence ENABLED.");
     for (;;) {
+	char command[100] = "";
+	char violentcmd[125] = "";
 	printf("👊 ~ ");
 	fgets(command, 100, stdin);
 	command[strcspn(command, "\n")] = 0; /* Whitespace trimming */
-	strcat(violentcmd, "su -c ");
+	strcat(violentcmd, "su -c \"");
 	strcat(violentcmd, command);
+	strcat(violentcmd, "\"");
 	system(violentcmd);
     }
 }
