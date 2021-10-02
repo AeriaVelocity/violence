@@ -15,8 +15,8 @@ int main()
 	printf("👊 ~ ");
 	fgets(command, 100, stdin);
 	command[strcspn(command, "\n")] = 0; /* Whitespace trimming */
-	strcat("su -c ", violentcmd);
-	strcat(command, violentcmd);
+	strcat(violentcmd, "su -c ");
+	strcat(violentcmd, command);
 	system(violentcmd);
     }
 }
